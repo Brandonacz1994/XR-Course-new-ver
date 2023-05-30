@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+
+import Test from "./Scenes/test"
+import Tema_18 from './Tema_18_PhysicsV2';
+import Tema_19 from './Tema_19_physics_Constrains';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <Routes>
+          <Route exact path='/' element={<Test/>}></Route>
+          <Route path='/tema_18' element={<Tema_18/>}></Route>
+          <Route path='/tema_19' element={<Tema_19/>}></Route>
+      </Routes>
+    </Router>
+)}
 
 export default App;
